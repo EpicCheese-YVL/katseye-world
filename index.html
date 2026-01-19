@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>katseye world</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #ffd6ea, #ffb7d9);
+      color: #7a1f4c;
+    }
+
+    /* LOGIN */
+    .login {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 360px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      letter-spacing: 0.35em;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .login-box p {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      font-size: 0.85rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 999px;
+      border: none;
+      background: #7a1f4c;
+      color: #ffd6ea;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .login small {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    /* HUB */
+    .hub {
+      display: none;
+      padding: 32px 20px 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hub h2 {
+      text-align: center;
+      letter-spacing: 0.3em;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.35);
+      border-radius: 16px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .name {
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .desc {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.75rem;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SHOW HUB AFTER "LOGIN" */
+    body.logged-in .login {
+      display: none;
+    }
+
+    body.logged-in .hub {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <section class="login">
+    <div class="login-box">
+      <h1>KATSEYE</h1>
+      <p>fan-made network hub</p>
+
+      <input type="text" placeholder="username" />
+      <input type="password" placeholder="password" />
+
+      <button onclick="login()">ENTER</button>
+
+      <small>
+        fan project · curated by
+        <a href="https://www.instagram.com/YOUR_IG/" target="_blank">@yourIG</a>
+      </small>
+    </div>
+  </section>
+
+  <!-- HUB -->
+  <section class="hub">
+    <h2>MEMBERS</h2>
+
+    <div class="grid">
+      <a class="card" href="#">
+        <div class="name">MEGAN</div>
+        <div class="desc">Lead presence with sharp performance and visual impact.</div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="name">DANIELA</div>
+        <div class="desc">Confident energy and strong stage charisma.</div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="name">LARA</div>
+        <div class="desc">Cool, smooth performer with understated aura.</div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="name">MANON</div>
+        <div class="desc">Expressive and powerful with emotional depth.</div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="name">SOPHIA</div>
+        <div class="desc">Elegant and balanced with strong musical presence.</div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="name">YOONCHAE</div>
+        <div class="desc">Bright energy and precise movement.</div>
+      </a>
+    </div>
+
+    <footer>
+      fan-made · no affiliation ·
+      <a href="https://www.instagram.com/megan/" target="_blank">@megan</a>
+    </footer>
+  </section>
+
+  <script>
+    function login() {
+      document.body.classList.add("logged-in");
+    }
+  </script>
+
+</body>
+</html>
